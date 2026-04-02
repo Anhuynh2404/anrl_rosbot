@@ -1,0 +1,85 @@
+# ============================================
+# ROS 2 Colcon Workspace - .gitignore
+# ============================================
+
+# ----- Colcon build artifacts -----
+build/
+install/
+log/
+
+# ----- C++ build artifacts -----
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.d
+*.gcno
+*.gcda
+*.gcov
+
+# ----- Python artifacts -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ----- IDE & Editor configs -----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.cproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+.clangd/
+compile_commands.json
+
+# ----- OS generated files -----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ----- ROS generated -----
+*.bag
+*.db3
+*.db3-shm
+*.db3-wal
+rosbag2_*/
+
+# ----- Gazebo -----
+.gz/
+.ignition/
+
+# ----- Environment & secrets -----
+.env
+.env.*
+*.pem
+*.key
+
+# ----- Testing & coverage -----
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+test-results/
+coverage.xml
+nosetests.xml
+
+# ----- Misc -----
+*.log
+core
+core.*
