@@ -11,8 +11,9 @@ cleanup() {
 # Set up cleanup trap
 trap 'cleanup' SIGINT SIGTERM
 
-# Check if SLAM argument is provided
-if [ "$1" = "slam" ]; then
+# Check if SLAM argument is provided (case-insensitive)
+SLAM_INPUT=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+if [ "$SLAM_INPUT" = "slam" ]; then
     SLAM_ARG="slam:=True"
 else
     SLAM_ARG="slam:=False"
@@ -38,7 +39,7 @@ ros2 launch yahboom_rosmaster_bringup rosmaster_x3_navigation.launch.py \
     pitch:=0.0 \
     yaw:=0.0 \
     "$SLAM_ARG" \
-    map:=/home/anhuynh/anrl_rosbot/src/yahboom_rosmaster/yahboom_rosmaster_navigation/maps/cafe_world_map.yaml &
+    map:=/home/anhuynh/anrl_rosbot/src/yahboom_rosmaster_navigation/maps/cafe_world_map.yaml &
 
 echo "Waiting 25 seconds for simulation to initialize..."
 sleep 25
